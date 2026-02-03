@@ -593,12 +593,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                       <span className="px-4 py-2 rounded-full bg-light text-sm font-semibold">HTML</span>
                       <span className="px-4 py-2 rounded-full bg-light text-sm font-semibold">Tailwind</span>
                     </div>
-                    <div className="inline-flex items-center gap-2 text-primary font-bold">
+                    {/* <div className="inline-flex items-center gap-2 text-primary font-bold">
                       View Project
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                       </svg>
-                    </div>
+                    </div> */}
                   </div>
                   <div className="w-full aspect-square rounded-3xl overflow-hidden shadow-2xl relative">
                     <Image src="/pinterest.png" alt="Pinterest Clone Project" fill className="project-image object-cover" />
@@ -614,9 +614,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
               <Link href="YOUR_BLINKIT_LINK_HERE" target="_blank" rel="noopener noreferrer" className="project-card bg-white rounded-3xl overflow-hidden shadow-xl">
                 <div className="aspect-video overflow-hidden relative">
                   <Image src="/blinkit.png" alt="Blinkit Clone" fill className="project-image object-cover" />
-                  <div className="project-overlay">
+                  {/* <div className="project-overlay">
                     <span className="text-white font-bold text-xl">View Project →</span>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="p-6 project-content">
                   <span className="text-xs font-bold text-primary uppercase">Mobile App</span>
@@ -629,9 +629,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
               <Link href="YOUR_GOZOOP_LINK_HERE" target="_blank" rel="noopener noreferrer" className="project-card bg-white rounded-3xl overflow-hidden shadow-xl">
                 <div className="aspect-video overflow-hidden relative">
                   <Image src="/gozoop.png" alt="Gozoop Website" fill className="project-image object-cover" />
-                  <div className="project-overlay">
+                  {/* <div className="project-overlay">
                     <span className="text-white font-bold text-xl">View Project →</span>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="p-6 project-content">
                   <span className="text-xs font-bold text-primary uppercase">Website</span>
@@ -644,13 +644,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
               <Link href="YOUR_PINTEREST_LINK_HERE" target="_blank" rel="noopener noreferrer" className="project-card bg-white rounded-3xl overflow-hidden shadow-xl">
                 <div className="aspect-video overflow-hidden relative">
                   <Image src="/urban.png" alt="Pinterest Clone" fill className="project-image object-cover" />
-                  <div className="project-overlay">
+                  {/* <div className="project-overlay">
                     <span className="text-white font-bold text-xl">View Project →</span>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="p-6 project-content">
                   <span className="text-xs font-bold text-primary uppercase">website</span>
-                  <h4 className="text-2xl font-bold mt-2 mb-3 font-display">Edge Clone</h4>
+                  <h4 className="text-2xl font-bold mt-2 mb-3 font-display">Urbab Edge Clone</h4>
                   <p className="text-gray-600 mb-4">E-commerce platform with streamlined checkout</p>
                 </div>
               </Link>
@@ -659,14 +659,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
               <Link href="YOUR_TRAVEL_LINK_HERE" target="_blank" rel="noopener noreferrer" className="project-card bg-white rounded-3xl overflow-hidden shadow-xl">
                 <div className="aspect-video overflow-hidden relative">
                   <Image src="/travel.png" alt="Travel Website" fill className="project-image object-cover" />
-                  <div className="project-overlay">
+                  {/* <div className="project-overlay">
                     <span className="text-white font-bold text-xl">View Project →</span>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="p-6 project-content">
                   <span className="text-xs font-bold text-primary uppercase">Travel</span>
                   <h4 className="text-2xl font-bold mt-2 mb-3 font-display">Travel Website</h4>
                   <p className="text-gray-600 mb-4">Modern travel booking with immersive visuals</p>
+                </div>
+              </Link>
+
+
+
+               {/* Project 5: Red Bus Clone */}
+              <Link href="YOUR_BUS_LINK_HERE" target="_blank" rel="noopener noreferrer" className="project-card bg-white rounded-3xl overflow-hidden shadow-xl">
+                <div className="aspect-video overflow-hidden relative">
+                  <Image src="/red bus.png" alt="red bus Clone" fill className="project-image object-cover" />
+                  {/* <div className="project-overlay">
+                    <span className="text-white font-bold text-xl">View Project →</span>
+                  </div> */}
+                </div>
+                <div className="p-6 project-content">
+                  <span className="text-xs font-bold text-primary uppercase">website</span>
+                  <h4 className="text-2xl font-bold mt-2 mb-3 font-display">Red Bus Clone</h4>
+                  <p className="text-gray-600 mb-4">E-commerce platform with streamlined checkout</p>
                 </div>
               </Link>
             </div>
