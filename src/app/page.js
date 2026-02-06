@@ -30,18 +30,18 @@ export default function Portfolio() {
     
     window.addEventListener('scroll', handleScroll);
     
-    // Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const href = anchor.getAttribute('href'); // Changed from this.getAttribute
-    const target = document.querySelector('href');
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      mobileMenu?.classList.add('hidden');
-    }
-  });
-});
+    // Smooth Scroll - FIXED
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const href = anchor.getAttribute('href');
+        const target = href ? document.querySelector(href) : null;
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          mobileMenu?.classList.add('hidden');
+        }
+      });
+    });
     
     // Reveal Sections
     const reveals = document.querySelectorAll('.reveal');
@@ -403,12 +403,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slideUp" style={{animationDelay: '0.4s'}}>
-                  <Link href="#projects" className="btn-primary px-8 py-4 rounded-full text-white font-bold text-center">
+                  <a href="#projects" className="btn-primary px-8 py-4 rounded-full text-white font-bold text-center">
                     View Projects
-                  </Link>
-                  <Link href="#contact" className="btn-secondary px-8 py-4 rounded-full text-white font-bold text-center">
+                  </a>
+                  <a href="#contact" className="btn-secondary px-8 py-4 rounded-full text-white font-bold text-center">
                     Let&apos;s Connect
-                  </Link>
+                  </a>
                 </div>
               </div>
               
@@ -577,115 +577,121 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
               </h2>
             </div>
             
-            {/* Featured Coding Project */}
+            {/* Featured Coding Project - Pinterest Clone */}
             <div className="mb-20">
-              <Link href="YOUR_PROJECT_LINK_HERE" target="_blank" rel="noopener noreferrer" className="block bg-white rounded-3xl p-8 md:p-12 shadow-xl card-hover">
+              <div className="block bg-white rounded-3xl p-8 md:p-12 shadow-xl card-hover">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div>
-                    <div className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold mb-4">
+                    <div className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-primary to-secondary text-black text-sm font-bold mb-4">
                       💻 Featured Project
                     </div>
                     <h3 className="text-4xl font-bold mb-4 font-display">Pinterest Clone</h3>
                     <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                      A comprehensive web application recreating BookMyShow&apos;s core functionality with modern design patterns and interactive UI components.
+                      A comprehensive web application recreating Pinterest&apos;s core functionality with modern design patterns and interactive UI components.
                     </p>
                     <div className="flex flex-wrap gap-3 mb-6">
                       <span className="px-4 py-2 rounded-full bg-light text-sm font-semibold">HTML</span>
                       <span className="px-4 py-2 rounded-full bg-light text-sm font-semibold">Tailwind</span>
+                      <span className="px-4 py-2 rounded-full bg-light text-sm font-semibold">UI/UX</span>
                     </div>
-                    {/* <div className="inline-flex items-center gap-2 text-primary font-bold">
-                      View Project
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                      </svg>
-                    </div> */}
                   </div>
-                  <div className="w-full aspect-square rounded-3xl overflow-hidden shadow-2xl relative">
-                    <Image src="/pinterest.png" alt="Pinterest Clone Project" fill className="project-image object-cover" />
+                  <div className="w-full aspect-video rounded-3xl overflow-hidden shadow-2xl relative">
+                    <Image src="/pinterest.png" alt="Pinterest Clone Project" fill className="project-image object-full" />
                   </div>
                 </div>
-              </Link>
+              </div>
+            </div>
+
+
+
+            <div className="mb-20">
+              <div className="block bg-white rounded-3xl p-8 md:p-12 shadow-xl card-hover">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div>
+                    <div className="inline-block px-4 py-2 rounded-full bg-gradient-to-red from-primary to-secondary text-black text-sm font-bold mb-4">
+                      💻 Featured Project
+                    </div>
+                    <h3 className="text-4xl font-bold mb-4 font-display">Travel HomePage</h3>
+                    <p className="text-gray-600 text-lg mb-6 leading-relaxed">
+                          Designing journeys through clean code and modern UI — a travel homepage built with HTML & Tailwind.                    </p>
+                    <div className="flex flex-wrap gap-3 mb-6">
+                      <span className="px-4 py-2 rounded-full bg-light text-sm font-semibold">HTML</span>
+                      <span className="px-4 py-2 rounded-full bg-light text-sm font-semibold">Tailwind</span>
+                      <span className="px-4 py-2 rounded-full bg-light text-sm font-semibold">UI/UX</span>
+                    </div>
+                  </div>
+                  <div className="w-full aspect-video rounded-3xl overflow-hidden shadow-2xl relative">
+                    <Image src="/wonder.png" alt="Pinterest Clone Project" fill className="project-image object-full" />
+                  </div>
+                </div>
+              </div>
             </div>
             
             {/* UI/UX Projects Grid */}
             <h3 className="text-3xl font-bold mb-8 font-display gradient-text">🎨 UI/UX Designs</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Project 1: Blinkit Clone */}
-              <Link href="YOUR_BLINKIT_LINK_HERE" target="_blank" rel="noopener noreferrer" className="project-card bg-white rounded-3xl overflow-hidden shadow-xl">
+              <div className="project-card bg-white rounded-3xl overflow-hidden shadow-xl">
                 <div className="aspect-video overflow-hidden relative">
                   <Image src="/blinkit.png" alt="Blinkit Clone" fill className="project-image object-cover" />
-                  {/* <div className="project-overlay">
-                    <span className="text-white font-bold text-xl">View Project →</span>
-                  </div> */}
                 </div>
                 <div className="p-6 project-content">
                   <span className="text-xs font-bold text-primary uppercase">Mobile App</span>
                   <h4 className="text-2xl font-bold mt-2 mb-3 font-display">Blinkit Clone</h4>
                   <p className="text-gray-600 mb-4">Modern grocery delivery app redesign with enhanced UX</p>
                 </div>
-              </Link>
+              </div>
               
               {/* Project 2: Gozoop */}
-              <Link href="YOUR_GOZOOP_LINK_HERE" target="_blank" rel="noopener noreferrer" className="project-card bg-white rounded-3xl overflow-hidden shadow-xl">
+              <div className="project-card bg-white rounded-3xl overflow-hidden shadow-xl">
                 <div className="aspect-video overflow-hidden relative">
                   <Image src="/gozoop.png" alt="Gozoop Website" fill className="project-image object-cover" />
-                  {/* <div className="project-overlay">
-                    <span className="text-white font-bold text-xl">View Project →</span>
-                  </div> */}
                 </div>
                 <div className="p-6 project-content">
                   <span className="text-xs font-bold text-primary uppercase">Website</span>
                   <h4 className="text-2xl font-bold mt-2 mb-3 font-display">Gozoop</h4>
                   <p className="text-gray-600 mb-4">Creative agency website with portfolio showcase</p>
                 </div>
-              </Link>
+              </div>
               
               {/* Project 3: Urban Edge Clone */}
-              <Link href="YOUR_PINTEREST_LINK_HERE" target="_blank" rel="noopener noreferrer" className="project-card bg-white rounded-3xl overflow-hidden shadow-xl">
+              <div className="project-card bg-white rounded-3xl overflow-hidden shadow-xl">
                 <div className="aspect-video overflow-hidden relative">
-                  <Image src="/urban.png" alt="Pinterest Clone" fill className="project-image object-cover" />
-                  {/* <div className="project-overlay">
-                    <span className="text-white font-bold text-xl">View Project →</span>
-                  </div> */}
+                  <Image src="/urban.png" alt="Urban Edge Clone" fill className="project-image object-cover" />
                 </div>
                 <div className="p-6 project-content">
-                  <span className="text-xs font-bold text-primary uppercase">website</span>
-                  <h4 className="text-2xl font-bold mt-2 mb-3 font-display">Urbab Edge Clone</h4>
+                  <span className="text-xs font-bold text-primary uppercase">Website</span>
+                  <h4 className="text-2xl font-bold mt-2 mb-3 font-display">Urban Edge Clone</h4>
                   <p className="text-gray-600 mb-4">E-commerce platform with streamlined checkout</p>
                 </div>
-              </Link>
+              </div>
               
               {/* Project 4: Travel Website */}
-              <Link href="YOUR_TRAVEL_LINK_HERE" target="_blank" rel="noopener noreferrer" className="project-card bg-white rounded-3xl overflow-hidden shadow-xl">
+              <div className="project-card bg-white rounded-3xl overflow-hidden shadow-xl">
                 <div className="aspect-video overflow-hidden relative">
                   <Image src="/travel.png" alt="Travel Website" fill className="project-image object-cover" />
-                  {/* <div className="project-overlay">
-                    <span className="text-white font-bold text-xl">View Project →</span>
-                  </div> */}
                 </div>
                 <div className="p-6 project-content">
                   <span className="text-xs font-bold text-primary uppercase">Travel</span>
                   <h4 className="text-2xl font-bold mt-2 mb-3 font-display">Travel Website</h4>
                   <p className="text-gray-600 mb-4">Modern travel booking with immersive visuals</p>
                 </div>
-              </Link>
+              </div>
 
-
-
-               {/* Project 5: Red Bus Clone */}
-              <Link href="YOUR_BUS_LINK_HERE" target="_blank" rel="noopener noreferrer" className="project-card bg-white rounded-3xl overflow-hidden shadow-xl">
+              {/* Project 5: Red Bus Clone */}
+              <div className="project-card bg-white rounded-3xl overflow-hidden shadow-xl">
                 <div className="aspect-video overflow-hidden relative">
-                  <Image src="/red bus.png" alt="red bus Clone" fill className="project-image object-cover" />
-                  {/* <div className="project-overlay">
-                    <span className="text-white font-bold text-xl">View Project →</span>
-                  </div> */}
+                  <Image src="/red bus.png" alt="Red Bus Clone" fill className="project-image object-cover" />
                 </div>
                 <div className="p-6 project-content">
-                  <span className="text-xs font-bold text-primary uppercase">website</span>
+                  <span className="text-xs font-bold text-primary uppercase">Website</span>
                   <h4 className="text-2xl font-bold mt-2 mb-3 font-display">Red Bus Clone</h4>
-                  <p className="text-gray-600 mb-4">E-commerce platform with streamlined checkout</p>
+                  <p className="text-gray-600 mb-4">Bus booking platform with intuitive search</p>
                 </div>
-              </Link>
+              </div>
+
+              {/* Project 6: Wanderlust Travels */}
+             
             </div>
           </div>
         </section>
@@ -701,15 +707,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             </div>
             
             <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {/* WhatsApp */}
-              <a href="https://wa.me/8700953211" target="_blank" rel="noopener noreferrer" className="bg-light rounded-3xl p-8 card-hover shadow-lg text-center">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 mx-auto mb-4 flex items-center justify-center">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                  </svg>
+              {/*Enail */}
+              <a href="mailto:ansaritamanna23102006@gmail.com" target="_blank" rel="noopener noreferrer" className="bg-light rounded-3xl p-8 card-hover shadow-lg text-center">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gray-400  mx-auto mb-4 flex items-center justify-center">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
                 </div>
-                <h4 className="font-bold text-lg mb-2">WhatsApp</h4>
-                <p className="text-sm text-gray-600">Chat with me</p>
+                <h4 className="font-bold text-lg mb-2">Email</h4>
+                <p className="text-sm text-gray-600">Contact with me</p>
               </a>
               
               {/* LinkedIn */}
